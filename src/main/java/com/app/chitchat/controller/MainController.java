@@ -12,7 +12,7 @@ public class MainController {
     @MessageMapping("/message")
     @SendTo("/topic/return-to")
     public Message message(@RequestBody Message message) {
-        System.err.println("request received");
+//        System.err.println("request received");
 //        try {
 //            Thread.sleep(20000);
 //        } catch(InterruptedException exception) {
