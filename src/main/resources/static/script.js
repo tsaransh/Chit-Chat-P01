@@ -31,9 +31,16 @@ $(document).ready((e)=>{
     $("#login").click(()=> {
         let name = $("#name-value").val()
         localStorage.setItem("name",name)
+        $("#name-title").html(`Welcome, <b>${name}</b>`)
         connect();
     })
     $("#send").click(()=> {
         sendMessage()
+    })
+    $("#logout").click(()=> {
+        localStorage.removeItem("name")
+        stompClient.disconnect()
+        $("#name-form").removeClass('d-none')
+        $("#chat-room").addClass('d-none')
     })
 })
